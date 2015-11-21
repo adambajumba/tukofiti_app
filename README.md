@@ -1,5 +1,9 @@
 == README
 
+# TukoFiti Rails App is a social community app to help individuals discover communities around them
+# with similar fitness goals and keeps track of their fitness, as well as allow users to posts 
+# updates on their fitness.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
