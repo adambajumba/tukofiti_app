@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'tukofiti_pages/home'
+
+  get 'tukofiti_pages/user'
+
+  get 'tukofiti_pages/profile'
+
+  get 'tukofiti_pages/progress'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
