@@ -10,4 +10,10 @@ class TukofitiPagesController < ApplicationController
 
   def progress
   end
+
+  def about
+  end
+
+  def help
+  end
 end
