@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
-  get 'tukofiti_pages/home'
-
-  get 'tukofiti_pages/user'
-
-  get 'tukofiti_pages/profile'
-
-  get 'tukofiti_pages/progress'
-
-  get 'tukofiti_pages/about'
-
-  get 'tukofiti_pages/help'
+  
+  root             'tukofiti_pages#home'
+  get 'user'     =>'tukofiti_pages#user'
+  get 'profile'  =>'tukofiti_pages#profile'
+  get 'progress' =>'tukofiti_pages#progress'
+  get 'about'    =>'tukofiti_pages#about'
+  get 'help'     =>'tukofiti_pages#help'
+  get 'signup'   =>'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'tukofiti_pages#home'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
