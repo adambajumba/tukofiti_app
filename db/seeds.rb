@@ -1,8 +1,7 @@
-User.create!(name: "Rails User",
-	email: "example@example.com",
-	password:
-	"rails4fun",
-	password_confirmation: "rails4fun",
+User.create!(name: "Example User",
+	email:   "example@gmail.com",
+	password: "password",
+	password_confirmation: "password",
 	admin: true,
 	activated: true,
 	activated_at: Time.zone.now)
