@@ -1,18 +1,23 @@
 Rails.application.routes.draw do
   
   root             'tukofiti_pages#home'
-  get 'user'     =>'tukofiti_pages#user'
-  get 'profile'  =>'tukofiti_pages#profile'
-  get 'progress' =>'tukofiti_pages#progress'
-  get 'about'    =>'tukofiti_pages#about'
-  get 'help'     =>'tukofiti_pages#help'
-  get 'signup'   =>'users#new'
-  get 'login'    =>'sessions#new'
-  post 'login'   =>'sessions#create'
+  get 'user'      =>'tukofiti_pages#user'
+  get 'profile'   =>'tukofiti_pages#profile'
+  get 'progress'  =>'tukofiti_pages#progress'
+  get 'about'     =>'tukofiti_pages#about'
+  get 'help'      =>'tukofiti_pages#help'
+  get 'signup'    =>'users#new'
+  get 'login'     =>'sessions#new'
+  post 'login'    =>'sessions#create'
   delete 'logout' =>'sessions#destroy'
-  resources         :users
+  resources         :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources         :account_activations, only: [:edit]
   resources         :posts, only: [:create, :destroy]
+  resources         :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

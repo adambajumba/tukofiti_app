@@ -2,7 +2,7 @@ User.create!(name: "Example User",
 	email:   "user1@gmail.com",
 	password: "password",
 	password_confirmation: "password",
-	# admin: true,
+	admin: true,
 	activated: true,
 	activated_at: Time.zone.now)
 99.times do |n|
@@ -18,7 +18,15 @@ User.create!(name: "Example User",
 end
 
 users = User.order(:created_at).take(6)
-5.times do
+50.times do
 	content = Faker::Lorem.sentence(5)
 	users.each { |user| user.posts.create!(content: content) }
 end
+
+# Following Relationships
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed)}
+followers.each { |follower| follower.follow(user)}

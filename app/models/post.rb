@@ -12,5 +12,6 @@ class Post < ActiveRecord::Base
   def picture_size
   	if picture.size > 5.megabytes
   		errors.add(:picture, "Image should be less than 5MB")
-  end
+    end
+end
 end
