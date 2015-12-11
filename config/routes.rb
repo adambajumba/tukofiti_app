@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root             'tukofiti_pages#home'
-  get 'user'      =>'tukofiti_pages#user'
-  get 'profile'   =>'tukofiti_pages#profile'
-  get 'progress'  =>'tukofiti_pages#progress'
+  # get 'user'      =>'tukofiti_pages#user'
+  # get 'profile'   =>'tukofiti_pages#profile'
+  # get 'progress'  =>'tukofiti_pages#progress'
   get 'about'     =>'tukofiti_pages#about'
   get 'help'      =>'tukofiti_pages#help'
   get 'signup'    =>'users#new'
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources         :account_activations, only: [:edit]
+  resources         :password_resets,  only: [:new, :create, :edit, :update]
   resources         :posts, only: [:create, :destroy]
   resources         :relationships, only: [:create, :destroy]
 

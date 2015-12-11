@@ -6,10 +6,11 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(post_params)
 		if @post.save
 			flash[:success] = "Post Created!"
-			redirect_to_root_url
+			redirect_to root_url
 		else
 			@feed_items = []
 			render "tukofiti_pages/home"
+		end
 	end
 
 	def destroy	
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
 	def correct_user
 		@post = current_user.posts.find_by(id: params[:id])
-		redirect_to_root_url if @post.nil?
+		redirect_to root_url if @post.nil?
 	end
 
 end

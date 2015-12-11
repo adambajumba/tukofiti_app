@@ -3,6 +3,7 @@ class UsersController < ApplicationController
                                         :following, :followers]
   def show
   	@user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-      @user.send_activation_email
+       @user.send_activation_email
   		flash[:info] = "Please check your email to activate your TukoFiti Account"
   		redirect_to root_url
   	else
