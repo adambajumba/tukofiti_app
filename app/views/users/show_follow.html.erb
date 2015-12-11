@@ -20,11 +20,11 @@
 	</aside>
 	<div class="col-md-8">
 		<h3><%= @title %></h3>
-		<% if @user.followers.any? %>
+		<% if @users.any? %>
 		<ul class="users follow">
-			<%= render @user.followers %>
+			<%= render @users %>
 		</ul>
 		<%= will_paginate %>
 		<% end %>
 	</div>
-</div>
+	</div

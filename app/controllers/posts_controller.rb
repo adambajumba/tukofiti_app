@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 			redirect_to root_url
 		else
 			@feed_items = []
-			render "tukofiti_pages/home"
+			render 'tukofiti_pages/home'
 		end
 	end
 

@@ -75,8 +75,8 @@ class User < ActiveRecord::Base
 
 	#Defines a proto-feed
 	#See "Following users"
-	def feed
-		Post.where("user_id = ?", id)
+	def password_reset_expired?
+		reset_sent_at < 2.hours.ago
 		
 	end
 
